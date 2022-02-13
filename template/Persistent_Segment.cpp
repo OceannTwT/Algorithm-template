@@ -59,10 +59,10 @@ public:
     explicit Persistent_Segment(vector<T>x):a(x),cnt(0){
         n = (int)x.size()-1;
         aa = a;
-        p.resize((n<<5)+10);
-        val.resize((n<<5)+10);
-        rt.resize((n<<5)+10);
-        sum.resize((n<<5)+10);
+        p.resize(21*n+10);
+        val.resize(21*n+10);
+        rt.resize(21*n+10);
+        sum.resize(21*n+10);
         sort(aa.begin(),aa.end());
         for(int i=1;i<=n;i++) {
             a[i]  = lower_bound(aa.begin(), aa.end(), a[i]) - aa.begin();
